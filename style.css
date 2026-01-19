@@ -146,6 +146,9 @@ nav ul li a{
     border-radius: 12px;
 }
 
+
+/* akhane podcast ar sob kicu ace */
+
 .podcast{
     max-width: 1600px;
     display: flex;
@@ -217,21 +220,76 @@ nav ul li a{
     color: #FFFFFF;
 }
 
-/* risponsive section */
+/* ackhane card ar sokor kicu pawa jay */
 
-@media  (max-width: 576px){
-  nav{
-    flex-direction: column;
-    gap: 16px;
+.card-section{
+    background: #230E3D;
+    max-width: 1600px;
+    margin: 0 auto;
+    color: white;
     text-align: center;
-  }
-
-  .btn-primary{
-    width: 100%;
-    font-size: 0.90rem;
-    padding: 10px 0;
-  }
 }
+
+.main-card-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 120px;
+}
+
+.card-section h2{
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.card-container {
+    display: grid;
+    gap: 30px;
+    grid-template-areas: 
+
+    "audio mobile mobile"
+    "audio community community"
+    "interviews interviews resources";
+    padding-bottom: 120px;
+}
+
+.audio {grid-area: audio;}
+.mobile {grid-area: mobile;}
+.community {grid-area: community;}
+.interviews {grid-area: interviews;}
+.resources {grid-area: resources;}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    background: #351165;
+    border-radius: 40px;
+}
+
+.card-container img{
+    width: 60px;
+    height: 60px;
+    margin-bottom: 16px;
+}
+
+.card-container h4{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.card-container p{
+    font-size: 1rem;
+    line-height: 24px;
+    text-align: start;
+}
+
+
+/* risponsive section */
+/*  */
 
 @media (max-width: 576px) {
 
@@ -274,5 +332,30 @@ nav ul li a{
       width: 100%; 
       padding: 12px 0;
       font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-content {
+    grid-template-columns: 1fr;
+    grid-template-areas: none;
+  }
+
+  .audio,
+  .mobile,
+  .community,
+  .interviews,
+  .resources {
+    grid-area: auto;
+  }
+
+  .card-content {
+    padding: 24px;
+    border-radius: 24px;
+    align-items: flex-start;
+  }
+
+  .card-section h2 {
+    font-size: 2rem;
   }
 }
